@@ -35,7 +35,8 @@ let package = Package(
              from: "8.18.2"),
     .package(name: "InstantSearchTelemetry",
              url: "https://github.com/algolia/instantsearch-telemetry-native",
-             from: "0.1.3")
+             from: "0.1.3"),
+    .package(url: "https://github.com/apple/swift-log.git", from: "1.5.4")
   ],
   targets: [
     .target(
@@ -67,7 +68,10 @@ let package = Package(
     ),
     .target(
       name: "InstantSearch",
-      dependencies: ["InstantSearchCore"]
+      dependencies: [
+        "InstantSearchCore",
+        .product(name: "Logging", package: "swift-log")
+      ]
     ),
     .testTarget(
       name: "InstantSearchTests",
