@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "InstantSearch",
   platforms: [
-    .iOS(.v9),
+    .iOS(.v14),
     .macOS(.v10_11),
     .watchOS(.v2),
     .tvOS(.v9)
